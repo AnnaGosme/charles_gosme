@@ -1,6 +1,4 @@
-// import '@styles/nav.css';
-import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import * as Styled from "@styledComponents/Nav";
 
 const navLinks = [
   { name: "home", link: "/" },
@@ -12,31 +10,17 @@ const navLinks = [
   { name: "contact", link: "/contact" },
 ];
 
-const StyledMenu = styled.aside`
-  margin: 4rem 2rem 0 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-`;
-
-const StyledLink = styled.a`
-  background-color: grey;
-  padding: 0.5rem;
-  font: "Roboto", sans-serif;
-  color: white;
-`;
-
 const Nav = () => {
   return (
-    <StyledMenu>
+    <Styled.StyledMenu>
       {navLinks.map((navLink) => {
         return (
-          <StyledLink>
-            <NavLink to="/music">{navLink.name.toUpperCase()}</NavLink>
-          </StyledLink>
+          <Styled.NavbarLink to={navLink.link}>
+            {navLink.name.toUpperCase()}
+          </Styled.NavbarLink>
         );
       })}
-    </StyledMenu>
+    </Styled.StyledMenu>
   );
 };
 

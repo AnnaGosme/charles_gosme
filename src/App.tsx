@@ -6,12 +6,14 @@ import Videos from "@components/Videos";
 import Photos from "@components/Photos";
 import Contact from "@components/Contact";
 import Home from "@components/Home";
-import Nav from "./components/Nav";
+import Nav from "@components/Nav";
+import Body from "@components/Body";
 
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <Nav />
+      <Body>
         <Routes>
           <Route path="/law-policy" element={<LawAndPolicy />} />
           <Route path="/music" element={<Music />} />
@@ -21,7 +23,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/" element={<Home />} />
         </Routes>
-      </div>
+      </Body>
     </Router>
   );
 };

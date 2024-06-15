@@ -1,6 +1,8 @@
+import * as Styled from "@styledComponents/Page";
+
 const Music = () => {
     return (
-        <h2>Music</h2>
+        <Styled.Title>Music</Styled.Title>
     )
 }
 

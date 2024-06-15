@@ -7,7 +7,10 @@
       ],
       "@utils/*": [
         "utils/*"
-      ]
+      ],
+      "@styledComponents/*": [
+        "styledComponents/*"
+      ],
     },
     "target": "es5",
     "lib": [
