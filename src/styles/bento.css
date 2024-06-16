@@ -1,0 +1,35 @@
+.grid-container {
+  align-self: center;
+
+  display: grid;
+  grid-template-rows: 352px 304px 304px;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px 16px;
+  grid-template-areas:
+    "box1_mid box1_big box1_big"
+    "box2_big box1_small box2_small"
+    "box2_big box3_small box4_small";
+}
+.box1_mid {
+  grid-area: box1_mid;
+}
+.box1_big {
+  grid-area: box1_big;
+}
+.box2_big {
+  grid-area: box2_big;
+}
+.box1_small {
+  grid-area: box1_small;
+}
+.box2_small {
+  grid-area: box2_small;
+}
+.box3_small {
+  margin-top: -4.5rem;
+  grid-area: box3_small;
+}
+.box4_small {
+  margin-top: -4.5rem;
+  grid-area: box4_small;
+}

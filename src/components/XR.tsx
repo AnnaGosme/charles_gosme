@@ -40,7 +40,7 @@ const XR = () => {
       {projects.map((project) => {
         return (
           <>
-            <YouTubeEmbed title={project.title} videoId={project.videoId} />
+            <YouTubeEmbed title={project.title} videoId={project.videoId} height={"auto"} width={"auto"}/>
             <Styled.Heading>{project.description}</Styled.Heading>
           </>
         );

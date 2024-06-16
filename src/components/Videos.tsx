@@ -1,5 +1,5 @@
 import * as Styled from "@styledComponents/Page";
-import YouTubeEmbed from "./YoutubeEmbed";
+import VideosLayout from "./VideosLayout";
 
 const videos = [
   {
@@ -88,9 +88,7 @@ const Videos = () => {
   return (
     <Styled.Container>
       <Styled.Title>Videos</Styled.Title>
-      {videos.map((video) => {
-        return <YouTubeEmbed title={video.title} videoId={video.videoId} />;
-      })}
+      <VideosLayout videos={videos} />
     </Styled.Container>
   );
 };

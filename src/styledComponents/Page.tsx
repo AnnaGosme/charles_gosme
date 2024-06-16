@@ -4,7 +4,7 @@ export const StyledBody = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-margin: 0;
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -26,12 +26,12 @@ export const SubTitle = styled.h3`
 `;
 
 export const Container = styled.div`
-  align-self: center;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   min-height: 100vh;
 `;
 
@@ -67,8 +67,8 @@ export const YoutubeFrame = styled.div`
 `;
 
 export const IFrame = styled.iframe`
-  width: 42.9375rem;
-  height: 23.644375rem;
+  /* width: 42.9375rem;
+  height: 23.644375rem; */
   border-radius: 1.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 `;
@@ -79,4 +79,12 @@ export const Heading = styled.p`
   font-weight: 500;
   max-width: 50vw;
   margin-top: -1.5rem;
+`;
+
+export const Button = styled.button`
+  text-decoration: none;
+  height: 2rem;
+  width: 12.5rem;
+  cursor: pointer;
+  border-radius: 20px;
 `;

@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .large-image-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .large-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .thumbnails-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 10px;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  .thumbnail {
+    max-width: 17vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .thumbnail-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+  

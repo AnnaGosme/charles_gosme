@@ -11,6 +11,9 @@
       "@styledComponents/*": [
         "styledComponents/*"
       ],
+      "@styles/*": [
+        "styles/*"
+      ],
     },
     "target": "es5",
     "lib": [
