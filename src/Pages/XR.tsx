@@ -1,5 +1,5 @@
 import * as Styled from "@styledComponents/Page";
-import YouTubeEmbed from "./YoutubeEmbed";
+import YouTubeEmbed from "@components/Videos/YoutubeEmbed";
 
 const projects = [
   {

@@ -3,14 +3,15 @@ import YouTubeEmbed from "./YoutubeEmbed";
 import { Button } from "@styledComponents/Page";
 import "@styles/videolayout.css";
 
-type TVideo = { title?: string; videoId?: string };
-type TVideos = TVideo[];
+type TVideo = { title: string; videoId: string };
 type TVideosProps = {
-  videos: TVideos;
+  videos: TVideo[] | null;
 };
 
 const VideosLayout = ({ videos }: TVideosProps) => {
-  const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  const [currentVideo, setCurrentVideo] = useState<TVideo>(
+    videos && videos.length > 0 ? videos[0] : {title: "", videoId: ""}
+  );
 
   const handleCurrentVideoChange = (video: TVideo) => {
     setCurrentVideo(video);
@@ -19,14 +20,14 @@ const VideosLayout = ({ videos }: TVideosProps) => {
   return (
     <>
       <YouTubeEmbed
-        title={currentVideo.title!}
+        title={currentVideo && currentVideo.title!}
         videoId={currentVideo.videoId!}
         height="500px"
         width="800px"
       />
       <div className="video_thumbnails-outer">
         <div className="video_thumbnails-inner">
-          {videos.slice(1).map((video, index) => (
+          {videos && videos.slice(1).map((video, index) => (
             <div key={index} className="video_thumbnail">
               <YouTubeEmbed
                 title={video.title!}

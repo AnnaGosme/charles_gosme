@@ -1,4 +1,3 @@
-import { Spotify } from "react-spotify-embed";
 import * as Styled from "@styledComponents/Page";
 import "@styles/bento.css";
 

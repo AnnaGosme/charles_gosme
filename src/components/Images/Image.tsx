@@ -6,16 +6,16 @@ import { AdvancedImage, placeholder } from "@cloudinary/react";
 // https://res.cloudinary.com/demo/image/upload/w_640/e_blur:1000,q_1,f_auto/e_grayscale/string_1.jpg
 
 type TImageProps = {
-  ImageLink: string;
-  alt: string;
+  id: number;
+  title: string;
   className: string;
 };
 
-const Image = ({ ImageLink, alt, className }: TImageProps) => {
+const Image = ({ id, title, className }: TImageProps) => {
   const cld = new Cloudinary({ cloud: { cloudName: "octavian2111" } });
 
   const img = cld
-    .image(ImageLink)
+    .image(`${title}${id}`)
     .format("auto") // Optimize delivery by resizing and applying auto-format and auto-quality
     .quality("auto")
     .resize(auto().gravity(autoGravity()).width(500).height(500)); // Transform the image: auto-crop to square aspect_ratio
@@ -24,7 +24,7 @@ const Image = ({ ImageLink, alt, className }: TImageProps) => {
     <AdvancedImage
       className={className}
       cldImg={img}
-      alt={alt}
+      alt=""
       plugins={[placeholder({ mode: "blur" })]}
       style={{
         borderRadius: "20px",
