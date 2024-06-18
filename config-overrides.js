@@ -11,5 +11,6 @@ module.exports = override(
     "@videos": path.resolve(__dirname, "src/components/Videos"),
     "@pages": path.resolve(__dirname, "src/components/Pages"),
     "@images": path.resolve(__dirname, "src/components/Images"),
+    "@assets": path.resolve(__dirname, "src/assets"),
   })
 );

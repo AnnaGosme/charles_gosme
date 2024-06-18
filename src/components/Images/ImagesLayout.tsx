@@ -2,7 +2,7 @@ import { useState } from "react";
 import "@styles/imagelayout.css";
 import Image from "./Image";
 
-type TImage = { id: number; title: string };
+type TImage = { id: number; title: string, credit: string };
 type TImagesProps = { photos: TImage[] };
 
 const ImagesLayout = ({ photos }: TImagesProps) => {
@@ -20,6 +20,7 @@ const ImagesLayout = ({ photos }: TImagesProps) => {
             title={currentImage.title}
             id={currentImage.id}
             className="large-image"
+            credit={currentImage.credit}
           />
         )}
       </div>
@@ -34,6 +35,7 @@ const ImagesLayout = ({ photos }: TImagesProps) => {
               title={image.title}
               id={image.id}
               className="thumbnail-image"
+              credit={image.credit}
             />
           </div>
         ))}

@@ -1,51 +1,68 @@
+import { useEffect, useState } from "react";
 import * as Styled from "@styledComponents/Page";
 import YouTubeEmbed from "@components/Videos/YoutubeEmbed";
 
-const projects = [
-  {
-    title: "Crime Scence Witness Memory",
-    videoId: "QU9uImW4Q9A",
-    description:
-      "VR prototype of a crime scene for a research project on eyewitness testimony that I developed within the framework of a University Diploma on VR and Psychology at Université Paris Cité.",
-  },
-  {
-    title: "Prototype of a Skatepark Experience",
-    videoId: "jehM7LztfDY",
-    description:
-      "VR prototype of a Skatepark experience, which I co-created as part of a team of four students during the 2021 Antwerp Summerschool on Storytelling in VR. I was the team's Unity developer. I also contributed to the storytelling, design and 3D modelling of the North Antwerp Skatepark.",
-  },
-  {
-    title: "Performance Anxiety",
-    videoId: "AquWEcbBA7c",
-    description:
-      "VR prototype of a performance anxiety app that I developed as a personal project within the framework of Circuit Stream's course on XR development.",
-  },
-  {
-    title: "Solo Dream",
-    videoId: "XNcf_-ixQN4",
-    description:
-      "'Solar Dream' is a work in progress that I am currently composing for a VR project led and developed in the Unreal Engine by Eric Carter. ",
-  },
-];
+type TProject = { title: string; videoId: string; description: string };
+type TProjects = TProject[];
 
 const XR = () => {
-  return (
-    <Styled.Container>
-      <Styled.Title>XR Portfolio</Styled.Title>
-      <Styled.SubTitle>
-        Below are three personal Virtual Reality projects that I have worked on
-        since 2021, as well as a composition for a Virtual Reality project by
-        Eric Carter.
-      </Styled.SubTitle>
-      {projects.map((project) => {
-        return (
-          <>
-            <YouTubeEmbed title={project.title} videoId={project.videoId} height={"auto"} width={"auto"}/>
-            <Styled.Heading>{project.description}</Styled.Heading>
-          </>
+  const [projects, setProjects] = useState<TProjects | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const resource = "xr";
+    const fetchData = async (resource: string) => {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/api.php?resource=${resource}`
         );
-      })}
-    </Styled.Container>
+        if (!response.ok) throw new Error("response not ok");
+        const projects = await response.json();
+        setProjects(projects);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          // Handle specific error related to network, fetch, or JSON parsing
+          setError(error.message);
+        } else {
+          return "unknown error";
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData(resource);
+  }, []);
+
+  return (
+    <>
+      {isLoading ? (
+        <Styled.Title>Loading ...</Styled.Title>
+      ) : error ? (
+        <Styled.Title>{error}</Styled.Title>
+      ) : (
+        <Styled.Container>
+          <Styled.Title>XR Portfolio</Styled.Title>
+          <Styled.SubTitle>
+            Below are three personal Virtual Reality projects that I have worked
+            on since 2021, as well as a composition for a Virtual Reality
+            project by Eric Carter.
+          </Styled.SubTitle>
+          {projects &&
+            projects.map((project, index) => (
+              <div key={index} style={{display: 'flex', flexDirection:'column', alignItems: 'center'}}>
+                <YouTubeEmbed
+                  title={project.title}
+                  videoId={project.videoId}
+                  height="500px"
+                  width="800px"
+                />
+                <Styled.Heading>{project.description}</Styled.Heading>
+              </div>
+            ))}
+        </Styled.Container>
+      )}
+    </>
   );
 };
 

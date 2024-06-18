@@ -3,7 +3,7 @@ import ImagesLayout from "@components/Images/ImagesLayout";
 import { useEffect, useState } from "react";
 
 type TPhotosResource = "photos";
-type TImage = { id: number; title: string };
+type TImage = { id: number; title: string, credit: string };
 type TImages = TImage[];
 
 const Photos = () => {
@@ -42,9 +42,6 @@ const Photos = () => {
       ) : (
         <>
           <Styled.Title>Photos</Styled.Title>
-          <Styled.SubTitle>
-            Concert at Silencio (pictures taken by Zoe Fan)
-          </Styled.SubTitle>
           {photos && <ImagesLayout photos={photos} />}
         </>
       )}

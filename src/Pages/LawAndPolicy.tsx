@@ -51,7 +51,7 @@ const LawAndPolicy = ({ fetchData }: TFetchResourceFunction) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {publication.title.toUpperCase()}
+              <span style={{fontWeight: 600}}>{publication.title.toUpperCase()}</span>
             </Styled.Anchor>
           ))}
         </>

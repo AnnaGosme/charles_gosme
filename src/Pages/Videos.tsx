@@ -1,5 +1,5 @@
 import * as Styled from "@styledComponents/Page";
-import VideosLayout from "./VideosLayout";
+import VideosLayout from "../components/Videos/VideosLayout";
 import { useEffect, useState } from "react";
 
 type TVideosResource = "videos";

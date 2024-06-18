@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LawAndPolicy from "Pages/LawAndPolicy";
 import Music from "Pages/Music";
 import XR from "Pages/XR";
-import Videos from "@components/Videos/Videos";
+import Videos from "Pages/Videos";
 import Photos from "Pages/Photos";
 import Contact from "Pages/Contact";
 import Home from "@components/Home";
@@ -12,6 +12,7 @@ import Body from "@components/Body";
 type TResource = "publications" | "music" | "xr" | "videos" | "photos";
 
 const App = () => {
+
   const fetchData = async (resource: TResource) => {
     try {
       const response = await fetch(

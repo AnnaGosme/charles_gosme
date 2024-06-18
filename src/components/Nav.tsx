@@ -1,4 +1,7 @@
-import * as Styled from "@styledComponents/Nav";
+import { useState } from "react";
+import MenuIcon from '@mui/icons-material/Menu';
+import "@styles/nav.css";
+import { NavLink } from "react-router-dom";
 
 const navLinks = [
   { name: "home", link: "/" },
@@ -11,16 +14,19 @@ const navLinks = [
 ];
 
 const Nav = () => {
+  const [showLinks, setShowLinks] = useState(false);
+
   return (
-    <Styled.StyledMenu>
-      {navLinks.map((navLink) => {
-        return (
-          <Styled.NavbarLink to={navLink.link}>
-            {navLink.name.toUpperCase()}
-          </Styled.NavbarLink>
-        );
-      })}
-    </Styled.StyledMenu>
+    <div className="navbar">
+        <div className="links" id={showLinks ? 'hidden' : ''}>
+          {navLinks.map((navLink) => {
+            return (
+              <NavLink onClick={() => setShowLinks(!showLinks)} to={navLink.link}>{navLink.name.toUpperCase()}</NavLink>
+            );
+          })}
+        </div>
+        <button onClick={() => setShowLinks(!showLinks)}><MenuIcon fontSize="large"/></button>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 .video_thumbnails-outer {
-  width: 80vw;
+  width: 50vw;
   height: auto;
   overflow: scroll;
   border-radius: 20px;
@@ -13,8 +13,10 @@
   align-items: center;
   gap: 16px;
   padding: 1rem;
-  background-color: grey;
+  background-color: #556C88;
+  border: 2px solid #535353;
   border-radius: 20px;
+  overflow: scroll;
 }
 
 .video_thumbnail {
