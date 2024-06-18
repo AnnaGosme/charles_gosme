@@ -46,6 +46,16 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/" element={<Home />} />
         </Routes>
+        <footer>
+        Made with 💜 by{" "}
+        <a
+          href="https://www.linkedin.com/in/anna-gosme/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Disco Cat
+        </a>
+      </footer>
       </Body>
     </Router>
   );

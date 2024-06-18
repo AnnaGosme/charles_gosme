@@ -11,16 +11,17 @@ h1 {
   height: 7.5rem;
   font-family: "Blackout", sans-serif;
   margin: 0;
-  margin-top: 40%;
+  /* margin-top: 40%; */
   font-size: 10rem;
   color: #f9f6f1;
   border: 30px solid black;
   border-radius: 10px;
 }
 
-h2 {
+h2#homepage {
+  align-self: flex-start;
   font-size: 3rem;
-  margin: 0;
+  margin: 0 3rem;
 }
 
 span {
@@ -36,6 +37,11 @@ img#homepage {
   border-radius: 20px;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
 @media (min-width: 1140px) and (max-width: 1775px) {
   h1 {
     margin-top: 38%;
@@ -49,12 +55,13 @@ img#homepage {
     height: 3.5rem;
     font-size: 5rem;
   }
-  img {
+
+  img#homepage {
     margin-top: -5%;
     width: 65vw;
   }
 
-  h2 {
+  h2#homepage {
     width: fit-content;
     font-size: 2rem;
   }
@@ -67,27 +74,29 @@ img#homepage {
     border: 15px solid black;
   }
 
-  h2 {
+  h2#homepage {
     /* margin-top: 2rem; */
     font-size: 2rem;
   }
 }
 
-@media (min-width: 320px) and  (max-width: 767px) {
-    h1 {
-        margin-top: -15%;
-        height: 3rem;
-        font-size: 5rem;
-        border: none;
-        color: black;
-      }
-      img {
-        margin-top: 25%;
-        width: 80vw;
-      }
-    
-      h2 {
-        margin-top: 17rem;
-        font-size: 2rem;
-      }
-    }
+@media (min-width: 320px) and (max-width: 767px) {
+  h1 {
+    margin-top: -30rem;
+    height: 3rem;
+    font-size: 3.5rem;
+    border: none;
+    color: black;
+  }
+
+  img#homepage {
+    width: 80vw;
+  }
+
+  h2#homepage {
+    margin: 0;
+    /* margin-top: 12rem; */
+    font-size: 2rem;
+    width: 25rem;
+  }
+}

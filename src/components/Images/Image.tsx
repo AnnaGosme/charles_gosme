@@ -35,7 +35,7 @@ const Image = ({ id, title, className, credit }: TImageProps) => {
         boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
       }}
       />
-      <figcaption style={{fontSize: '0.8rem', marginLeft:'0.3rem', marginTop: '-1.2rem', color: 'white'}}>{`Photo by ${credit}`}</figcaption>
+      <figcaption style={{fontSize: '0.7rem', marginLeft:'0.3rem', marginTop: '-2rem', color: 'white'}}>{`Photo by ${credit}`}</figcaption>
       </div>
   );
 };

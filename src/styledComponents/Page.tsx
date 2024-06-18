@@ -15,7 +15,7 @@ export const StyledBody = styled.div`
 `;
 
 export const Title = styled.h2`
-margin: 0;
+  margin: 0;
   align-self: center;
   font-size: 2.5rem;
   font-weight: 600;
@@ -34,19 +34,19 @@ export const Container = styled.div`
   align-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   min-height: 100vh;
-  min-width: 60vw;
-  max-width: 65vw;
+  width: 65vw;
   padding: 5rem;
   background-color: #f9f6f1;
   border-left: 4px solid #556c88;
   border-right: 4px solid #556c88;
 
-  @media (min-width: 320px) and  (max-width: 767px) {}
-  padding: 3rem;
+  @media (min-width: 320px) and (max-width: 767px) {
+    padding: 3rem;
+  }
 `;
 
 export const Anchor = styled.a`
@@ -77,20 +77,19 @@ export const Anchor = styled.a`
 `;
 
 export const YoutubeFrame = styled.div`
-  width: 100%;
-  max-width: 800px;
+  width: 80vw;
 `;
 
 export const IFrame = styled.iframe`
+  width: 100%;
   border-radius: 1.5rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 `;
 
 export const Heading = styled.p`
-  margin-left: -4.5rem;
   font-size: 1rem;
   font-weight: 500;
-  max-width: 50vw;
+  max-width: 70vw;
 `;
 
 export const Button = styled.button`

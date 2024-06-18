@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 961px) and (max-width: 1139px) {
+@media screen and (max-width: 1139px) {
   .container {
     flex-direction: column;
   }
@@ -61,6 +61,5 @@
     height: auto;
     margin-bottom: 16px;
     border-radius: 16px;
-    border: 2px solid black;
   }
 }
